@@ -16,7 +16,7 @@ public class DoctorRepository {
         em.persist(doctor);
     }
 
-    public Doctor findOne(String did) {
+    public Doctor findOne(Long did) {
         return em.find(Doctor.class, did);
     }
 

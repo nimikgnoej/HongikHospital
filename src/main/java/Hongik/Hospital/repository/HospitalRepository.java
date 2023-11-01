@@ -16,7 +16,7 @@ public class HospitalRepository {
         em.persist(hospital);
     }
 
-    public Hospital findOne(String hid) {
+    public Hospital findOne(Long hid) {
         return em.find(Hospital.class, hid);
     }
 

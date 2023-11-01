@@ -13,7 +13,7 @@ public class Reservation {
     @Id
     @GeneratedValue
     @Column(name = "reservation_id")
-    private String reservation_id;
+    private Long reservation_id;
 
     @Enumerated(EnumType.STRING)
     private Status status;

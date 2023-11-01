@@ -16,7 +16,7 @@ public class ReservationRepository {
         em.persist(reservation);
     }
 
-    public Reservation findOne(String reservation_id) {
+    public Reservation findOne(Long reservation_id) {
         return em.find(Reservation.class, reservation_id);
     }
 

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class AllReservation {
     @Id
     @GeneratedValue
-    private String all_id;
+    private Long all_id;
 
     private String hospital;
 

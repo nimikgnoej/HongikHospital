@@ -12,7 +12,7 @@ import java.util.List;
 public class Patient {
     @Id
     @GeneratedValue
-    private String pid;
+    private Long pid;
 
     private int age;
     @Enumerated(EnumType.STRING)

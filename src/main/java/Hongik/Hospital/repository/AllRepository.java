@@ -17,7 +17,7 @@ public class AllRepository {
         em.persist(allReservation);
     }
 
-    public AllReservation findOne(String all_id) {
+    public AllReservation findOne(Long all_id) {
         return em.find(AllReservation.class, all_id);
     }
 

@@ -13,7 +13,7 @@ import java.util.List;
 public class Doctor {
     @Id
     @GeneratedValue
-    private String did;
+    private Long did;
 
     private int career;
 

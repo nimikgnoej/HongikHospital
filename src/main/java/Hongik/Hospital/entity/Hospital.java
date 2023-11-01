@@ -13,7 +13,7 @@ import java.util.List;
 public class Hospital {
     @Id
     @GeneratedValue
-    private String hid;
+    private Long hid;
 
     private String name;
 

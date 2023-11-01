@@ -16,7 +16,7 @@ public class DepartmentRepository {
         em.persist(department);
     }
 
-    public Department findOne(String dept_id) {
+    public Department findOne(Long dept_id) {
         return em.find(Department.class, dept_id);
     }
 

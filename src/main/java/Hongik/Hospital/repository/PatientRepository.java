@@ -18,7 +18,7 @@ public class PatientRepository {
         em.persist(patient);
     }
 
-    public Patient findOne(String pid) { //의사 PK로 의사 조회
+    public Patient findOne(Long pid) { //의사 PK로 의사 조회
         return em.find(Patient.class,pid);
     }
 

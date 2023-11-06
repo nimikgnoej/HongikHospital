@@ -2,6 +2,7 @@ package Hongik.Hospital.repository;
 
 import Hongik.Hospital.entity.Reservation;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,8 +13,10 @@ public class ReservationRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public void save(Reservation reservation) {
+    @Transactional
+    public Long save(Reservation reservation) {
         em.persist(reservation);
+        return reservation.getReservation_id();
     }
 
     public Reservation findOne(Long reservation_id) {

@@ -28,4 +28,28 @@ public class Reservation {
     @JoinColumn(name = "did")
     private Doctor doctor;
 
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+        patient.getReservationList().add(this);
+    }
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+        doctor.getReservationList().add(this);
+    }
+
+    //예약 생성 메서드
+    public static Reservation createReservation(Patient patient, Doctor doctor) {
+        Reservation reservation = new Reservation();
+        reservation.setDoctor(doctor);
+        reservation.setPatient(patient);
+        reservation.setTime(LocalDateTime.now());
+        reservation.setStatus(Status.OK);
+        return reservation;
+    }
+
+    public void cancle() {
+        this.setStatus(Status.CANCLE);
+        this.time = null;
+        patient.getReservationList().remove(this);
+    }
 }

@@ -12,8 +12,9 @@ public class DoctorRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public void save(Doctor doctor) {
+    public Long save(Doctor doctor) {
         em.persist(doctor);
+        return doctor.getDid();
     }
 
     public Doctor findOne(Long did) {

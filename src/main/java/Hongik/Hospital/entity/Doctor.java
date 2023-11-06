@@ -21,7 +21,9 @@ public class Doctor {
 
     private String phone;
 
-    private int dept_id;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "dept_id")
+    private Department department;
 
     @OneToMany(mappedBy = "doctor")
     private List<Reservation> reservationList = new ArrayList<>();
